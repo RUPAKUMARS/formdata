@@ -97,7 +97,7 @@
 <body>
     <main>
        
-        <form action="" method="post" name="nptel">
+        <form action="https://script.google.com/macros/s/AKfycbwsAL_cD377iXBCpf1v3TNJ3B4TeRlKfI6ZZhpEEUEmy411w7Z3rMeEapIwAkW8cKgB/exec" method="post" name="nptel">
             <h2>NPTEL Registration Form</h2>
             <div class="f">
             <label for="name">Name</label> <br>
@@ -132,16 +132,5 @@
         </form>
     </main>
 </body>
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwsAL_cD377iXBCpf1v3TNJ3B4TeRlKfI6ZZhpEEUEmy411w7Z3rMeEapIwAkW8cKgB/exec'
-			const form = document.forms['nptel']
-		  
-			form.addEventListener('submit', e => {
-			  e.preventDefault()
-			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-				.then(response => alert("Thank you! your form is submitted successfully." ))
-				.then(() => {  window.location.reload(); })
-				.catch(error => console.error('Error!', error.message))
-			})
-</script>
+
 </html>
