@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPM -AICTE Registration form</title>
+    <style>
+        form {
+            width: 47vw;
+            height: 100vh;
+            border: 2px solid red;
+            border-radius: 5% 25% 5% 25%;
+            padding: 2vw 2vh;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+        .f {
+            width: 37vw;
+            height: auto;
+            border-radius: 28px;
+            margin: 2vh 2vw;
+        }
+        input:hover{
+            box-shadow: 3px -3px 8px red;
+        }
+        input{
+            width: 35vw;
+            height: 7vh;
+           border-radius: 25px;
+           padding: 5px;
+           font-size: large;
+           font-weight: bold;
+        }
+        
+        label{
+            text-align: center;
+            font-weight: bold;
+        }
+        button{
+            text-align: center;
+           border: 2px solid darkred;
+            width: 12vw;
+            height: 8vh;
+            background-color: darkred;
+            color: white;
+            border-radius: 28px;
+            transform: translate(15vw,0vw);
+        }
+        button:hover{
+            border: 2px solid darkred;
+            color: darkred;
+            background-color: white;
+        }
+        h2{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        @media screen and (max-width:450px) {
+            form{
+                width: 90vw;
+            }
+            input{
+                width: 80vw;
+                height: 6vh;
+                transform: translate(5vw,0vw);
+            }
+            button{
+                width: 30vw;
+                height: auto;
+                border-radius: 25px;
+            }
+        }
+        @media screen and (max-width:800px) {
+            input{
+                width: 80vw;
+                height: 6vh;
+                transform: translate(5vw,0vw);
+            }
+            form{
+                width: 90vw;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            button{
+                width: 15vw;
+                height: 8vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+       
+        <!-- <form action="/home/AICTERegForm" method="post"> -->
+            <form action="" method="post" name="aicte">
+            <h2>AICTE Registration Form</h2>
+            <div class="f">
+            <label for="name">Name</label> <br>
+            <input type="text" name="uname" id="name" placeholder="Enter your name">
+        </div>
+
+        <div class="f">
+            <label for="branch"> Branch</label> <br>
+            <input type="text" name="branch" id="branch" placeholder="Enter branch here eg-Civil Engg."></div>
+
+            <div class="f">
+
+            <label for="reg_no"> Registration no.</label> <br>
+            <input type="number" name="reg_no" id="reg_no"  
+        placeholder="Your Registration number eg-1171xxx"></div>
+
+           <div class="f">
+            <label for="roll"> Roll number</label> <br>
+            <input type="number" name="roll" id="roll" placeholder="Your roll no eg-202x-cse-xx">
+           </div>
+
+            <div class="f">
+                <label for="email">Your email</label> <br>
+            <input type="email" name="email" id="email" placeholder="Your email eg-aakarshm826@gmail.com">
+            </div>
+
+           <div class="f">
+            <label for="number"> Whatsapp number</label> <br>
+            <input type="number" name="number" id="number" >
+           </div>
+            <button>Submit</button>
+        </form>
+    </main>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxOjKxXA7Zi1KaqipE7arCMH0f935_MJJBFsSpcc2vM6LrhTQrQArubk9NrmVX7Jifm/exec'
+			const form = document.forms['aicte']
+		  
+			form.addEventListener('submit', e => {
+			  e.preventDefault()
+			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => alert("Thank you! your form is submitted successfully." ))
+				.then(() => {  window.location.reload(); })
+				.catch(error => console.error('Error!', error.message))
+			})
+</script>
+
+</html>
